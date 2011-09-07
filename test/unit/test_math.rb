@@ -28,5 +28,4 @@ class TestTardisMath < MiniTest::Unit::TestCase
     random = rand(10000)
     assert Tardis::Hour * random, random.hours
   end
-
 end

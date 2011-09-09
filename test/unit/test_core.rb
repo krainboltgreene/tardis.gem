@@ -16,34 +16,34 @@ class TestTardisCore < MiniTest::Unit::TestCase
   end
 
   def test_minute_count
-    assert @minute, Tardis::Minute
+    assert_equal @minute, Tardis::Minute
   end
 
   def test_hour_count
-    assert @hour, Tardis::Hour
+    assert_equal @hour, Tardis::Hour
   end
 
   def test_day_count
-    assert @day, Tardis::Day
+    assert_equal @day, Tardis::Day
   end
 
   def test_week_count
-    assert @week, Tardis::Week
+    assert_equal @week, Tardis::Week
   end
 
   def test_month_count
-    assert @month, Tardis::Month
+    assert_equal @month, Tardis::Month
   end
 
   def test_year_count
-    assert @year, Tardis::Year
+    assert_equal @year, Tardis::Year
   end
 
   def test_decade_count
-    assert @decade, Tardis::Decade
+    assert_equal @decade, Tardis::Decade
   end
 
   def test_century_count
-    assert @century, Tardis::Century
+    assert_equal @century, Tardis::Century
   end
 end

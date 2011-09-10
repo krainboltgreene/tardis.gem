@@ -1,36 +1,45 @@
-Project Name
-============
+Tardis
+======
 
-**Stable Version**: 1.0.0
+**Latest Version**: 0.2.0
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+`tardis` is a gem for manipulating time and space, but mostly time.
+Much like it's namesake on the television series Doctor Who `tardis` provides you with a lot of tools for time.
+It's core features are:
+
+* Convienient Time Unit helpers, both for Time Unit math and converting.
+* Handles both regular Time Units and SI Metric Seconds.
+* Time specific helpers for traversing time periods.
+* Turning time and Time Units into words for reading.
+* Holidays!
 
 
 Examples
 --------
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+As explained above here's a few of the features that really makes the `tardis` twirl:
 
 ``` ruby
-puts "hello world"
+4000.centuries
+# => 11612160000000
+
+46.days.to_hours
+# => 1104.0
+
+14.kiloseconds
+# => 14000
+
+Time.yesterday.to 4.days.from_now
+# => 432000.000007
+
+Time.tomorrow.from_now.in_words
+# => "1 day from now"
+
+Time.last_christmas.to Time.tomorrow
+# => 2445600.001
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+And a dozen other little features to make time less time consuming.
 
 
 Installing
@@ -38,28 +47,25 @@ Installing
 
 **Requirements**
 
-1. Requirement One
-2. Requirement Two
-3. Requirement Three
+1. MRI 1.9.2
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Installing `tardis` is as easy as using the `gem install` command:
 
-```
-$ gem install projectname
-$ do-other-thing
+``` terminal
+$ gem install tardis
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Or using it in your `bundler` `Gemfile`:
+
+``` ruby
+gem 'tardis'
+```
+
+And then using:
+
+``` terminal
+$ bundle install
+```
 
 
 **Testing**
@@ -67,41 +73,34 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 To make sure you did everything right, just do the following:
 
 ```
-$ projectname -v
-> what-should-appear
+$ ruby -e 'p require "tardis"'
+> true
 ```
 
 
 Issues & Documentation
 ----------------------
 
-* [Documentation]()
-* [Issues]()
+* [Documentation](https://github.com/krainboltgreene/tardis/wiki)
+* [Issues](https://github.com/krainboltgreene/tardis/issues)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Feel free to contribute to the documentation wiki if you feel something is lacking.
+Remember that we really want to know if something is wrong, so use the Issue List if you have a problem.
 
 
 Changelog
 ---------
 
-**v1.0.0**
+**v0.2.0**
 
-* Duis aute irure dolor
-* Officia deserunt mollit
-* Sunt in culpa qui
-* Labore et dolore magna aliqua
+* Adding math related work and tests
+* Adding time unit convertion and tests
 
-**v0.9.0**
+**v0.1.0**
 
-* Duis aute irure dolor
-* Officia deserunt mollit
-* Sunt in culpa qui
-* Labore et dolore magna aliqua
+* Adding Time Units
+* Adding minitest framework
+* Initiating the project
 
 
 Contributing
@@ -125,17 +124,15 @@ Contributing
 Credits
 -------
 
-* [name-of-person](mailto: email@email.com)
-* [name-of-person](mailto: email@email.com)
-* [name-of-person](mailto: email@email.com)
-* [name-of-person](mailto: email@email.com)
-* [name-of-person](mailto: email@email.com)
+* [sirupsen](https://github.com/sirupsen) for working on the original `time-lord`
+* [wolfwood](https://github.com/wolfwood) for working on the original `time-lord`
+* [henrikh](https://github.com/henrikh) for working on the original `time-lord`
 
 
 License
 -------
 
-Copyright (c) YEAR YOUR NAME
+Copyright (c) 2011 Kurtis Rainbolt-Greene
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

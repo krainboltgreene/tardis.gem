@@ -62,6 +62,66 @@ class TestTardisConvert < MiniTest::Unit::TestCase
     assert_equal Tardis::Century.to_f / Tardis::Week.to_f, 1.century.to_weeks
   end
 
+  def test_single_unit_to_months
+    assert_equal Tardis::Second.to_f / Tardis::Month.to_f, 1.second.to_months
+    assert_equal Tardis::Minute.to_f / Tardis::Month.to_f, 1.minute.to_months
+    assert_equal Tardis::Hour.to_f / Tardis::Month.to_f, 1.hour.to_months
+    assert_equal Tardis::Day.to_f / Tardis::Month.to_f, 1.day.to_months
+    assert_equal Tardis::Week.to_f / Tardis::Month.to_f, 1.week.to_months
+    assert_equal Tardis::Month.to_f / Tardis::Month.to_f, 1.month.to_months
+    assert_equal Tardis::Year.to_f / Tardis::Month.to_f, 1.year.to_months
+    assert_equal Tardis::Decade.to_f / Tardis::Month.to_f, 1.decade.to_months
+    assert_equal Tardis::Century.to_f / Tardis::Month.to_f, 1.century.to_months
+  end
+
+  def test_single_unit_to_years
+    assert_equal Tardis::Second.to_f / Tardis::Year.to_f, 1.second.to_years
+    assert_equal Tardis::Minute.to_f / Tardis::Year.to_f, 1.minute.to_years
+    assert_equal Tardis::Hour.to_f / Tardis::Year.to_f, 1.hour.to_years
+    assert_equal Tardis::Day.to_f / Tardis::Year.to_f, 1.day.to_years
+    assert_equal Tardis::Week.to_f / Tardis::Year.to_f, 1.week.to_years
+    assert_equal Tardis::Month.to_f / Tardis::Year.to_f, 1.month.to_years
+    assert_equal Tardis::Year.to_f / Tardis::Year.to_f, 1.year.to_years
+    assert_equal Tardis::Decade.to_f / Tardis::Year.to_f, 1.decade.to_years
+    assert_equal Tardis::Century.to_f / Tardis::Year.to_f, 1.century.to_years
+  end
+
+  def test_single_unit_to_decades
+    assert_equal Tardis::Second.to_f / Tardis::Decade.to_f, 1.second.to_decades
+    assert_equal Tardis::Minute.to_f / Tardis::Decade.to_f, 1.minute.to_decades
+    assert_equal Tardis::Hour.to_f / Tardis::Decade.to_f, 1.hour.to_decades
+    assert_equal Tardis::Day.to_f / Tardis::Decade.to_f, 1.day.to_decades
+    assert_equal Tardis::Week.to_f / Tardis::Decade.to_f, 1.week.to_decades
+    assert_equal Tardis::Month.to_f / Tardis::Decade.to_f, 1.month.to_decades
+    assert_equal Tardis::Year.to_f / Tardis::Decade.to_f, 1.year.to_decades
+    assert_equal Tardis::Decade.to_f / Tardis::Decade.to_f, 1.decade.to_decades
+    assert_equal Tardis::Century.to_f / Tardis::Decade.to_f, 1.century.to_decades
+  end
+
+  def test_single_unit_to_centuries
+    assert_equal Tardis::Second.to_f / Tardis::Century.to_f, 1.second.to_centuries
+    assert_equal Tardis::Minute.to_f / Tardis::Century.to_f, 1.minute.to_centuries
+    assert_equal Tardis::Hour.to_f / Tardis::Century.to_f, 1.hour.to_centuries
+    assert_equal Tardis::Day.to_f / Tardis::Century.to_f, 1.day.to_centuries
+    assert_equal Tardis::Week.to_f / Tardis::Century.to_f, 1.week.to_centuries
+    assert_equal Tardis::Month.to_f / Tardis::Century.to_f, 1.month.to_centuries
+    assert_equal Tardis::Year.to_f / Tardis::Century.to_f, 1.year.to_centuries
+    assert_equal Tardis::Decade.to_f / Tardis::Century.to_f, 1.decade.to_centuries
+    assert_equal Tardis::Century.to_f / Tardis::Century.to_f, 1.century.to_centuries
+  end
+
+  def test_single_unit_to_weeks
+    assert_equal Tardis::Second.to_f / Tardis::Week.to_f, 1.second.to_weeks
+    assert_equal Tardis::Minute.to_f / Tardis::Week.to_f, 1.minute.to_weeks
+    assert_equal Tardis::Hour.to_f / Tardis::Week.to_f, 1.hour.to_weeks
+    assert_equal Tardis::Day.to_f / Tardis::Week.to_f, 1.day.to_weeks
+    assert_equal Tardis::Week.to_f / Tardis::Week.to_f, 1.week.to_weeks
+    assert_equal Tardis::Month.to_f / Tardis::Week.to_f, 1.month.to_weeks
+    assert_equal Tardis::Year.to_f / Tardis::Week.to_f, 1.year.to_weeks
+    assert_equal Tardis::Decade.to_f / Tardis::Week.to_f, 1.decade.to_weeks
+    assert_equal Tardis::Century.to_f / Tardis::Week.to_f, 1.century.to_weeks
+  end
+
   def test_multiple_units_to_seconds
     random = rand(10000)
     assert_equal Tardis::Second * random, random.seconds.to_seconds
@@ -86,5 +146,96 @@ class TestTardisConvert < MiniTest::Unit::TestCase
     assert_equal (Tardis::Year * random).to_f / Tardis::Minute.to_f, random.year.to_minutes
     assert_equal (Tardis::Decade * random).to_f / Tardis::Minute.to_f, random.decade.to_minutes
     assert_equal (Tardis::Century * random).to_f / Tardis::Minute.to_f, random.century.to_minutes
+  end
+
+  def test_multiple_units_to_hours
+    random = rand(10000)
+    assert_equal (Tardis::Second * random).to_f / Tardis::Hour.to_f, random.seconds.to_hours
+    assert_equal (Tardis::Minute * random).to_f / Tardis::Hour.to_f, random.minute.to_hours
+    assert_equal (Tardis::Hour * random).to_f / Tardis::Hour.to_f, random.hour.to_hours
+    assert_equal (Tardis::Day * random).to_f / Tardis::Hour.to_f, random.day.to_hours
+    assert_equal (Tardis::Week * random).to_f / Tardis::Hour.to_f, random.week.to_hours
+    assert_equal (Tardis::Month * random).to_f / Tardis::Hour.to_f, random.month.to_hours
+    assert_equal (Tardis::Year * random).to_f / Tardis::Hour.to_f, random.year.to_hours
+    assert_equal (Tardis::Decade * random).to_f / Tardis::Hour.to_f, random.decade.to_hours
+    assert_equal (Tardis::Century * random).to_f / Tardis::Hour.to_f, random.century.to_hours
+  end
+
+  def test_multiple_units_to_days
+    random = rand(10000)
+    assert_equal (Tardis::Second * random).to_f / Tardis::Day.to_f, random.seconds.to_days
+    assert_equal (Tardis::Minute * random).to_f / Tardis::Day.to_f, random.minute.to_days
+    assert_equal (Tardis::Hour * random).to_f / Tardis::Day.to_f, random.hour.to_days
+    assert_equal (Tardis::Day * random).to_f / Tardis::Day.to_f, random.day.to_days
+    assert_equal (Tardis::Week * random).to_f / Tardis::Day.to_f, random.week.to_days
+    assert_equal (Tardis::Month * random).to_f / Tardis::Day.to_f, random.month.to_days
+    assert_equal (Tardis::Year * random).to_f / Tardis::Day.to_f, random.year.to_days
+    assert_equal (Tardis::Decade * random).to_f / Tardis::Day.to_f, random.decade.to_days
+    assert_equal (Tardis::Century * random).to_f / Tardis::Day.to_f, random.century.to_days
+  end
+
+  def test_multiple_units_to_weeks
+    random = rand(10000)
+    assert_equal (Tardis::Second * random).to_f / Tardis::Week.to_f, random.seconds.to_weeks
+    assert_equal (Tardis::Minute * random).to_f / Tardis::Week.to_f, random.minute.to_weeks
+    assert_equal (Tardis::Hour * random).to_f / Tardis::Week.to_f, random.hour.to_weeks
+    assert_equal (Tardis::Day * random).to_f / Tardis::Week.to_f, random.day.to_weeks
+    assert_equal (Tardis::Week * random).to_f / Tardis::Week.to_f, random.week.to_weeks
+    assert_equal (Tardis::Month * random).to_f / Tardis::Week.to_f, random.month.to_weeks
+    assert_equal (Tardis::Year * random).to_f / Tardis::Week.to_f, random.year.to_weeks
+    assert_equal (Tardis::Decade * random).to_f / Tardis::Week.to_f, random.decade.to_weeks
+    assert_equal (Tardis::Century * random).to_f / Tardis::Week.to_f, random.century.to_weeks
+  end
+
+  def test_multiple_units_to_months
+    random = rand(10000)
+    assert_equal (Tardis::Second * random).to_f / Tardis::Month.to_f, random.seconds.to_months
+    assert_equal (Tardis::Minute * random).to_f / Tardis::Month.to_f, random.minute.to_months
+    assert_equal (Tardis::Hour * random).to_f / Tardis::Month.to_f, random.hour.to_months
+    assert_equal (Tardis::Day * random).to_f / Tardis::Month.to_f, random.day.to_months
+    assert_equal (Tardis::Week * random).to_f / Tardis::Month.to_f, random.week.to_months
+    assert_equal (Tardis::Month * random).to_f / Tardis::Month.to_f, random.month.to_months
+    assert_equal (Tardis::Year * random).to_f / Tardis::Month.to_f, random.year.to_months
+    assert_equal (Tardis::Decade * random).to_f / Tardis::Month.to_f, random.decade.to_months
+    assert_equal (Tardis::Century * random).to_f / Tardis::Month.to_f, random.century.to_months
+  end
+
+  def test_multiple_units_to_years
+    random = rand(10000)
+    assert_equal (Tardis::Second * random).to_f / Tardis::Year.to_f, random.seconds.to_years
+    assert_equal (Tardis::Minute * random).to_f / Tardis::Year.to_f, random.minute.to_years
+    assert_equal (Tardis::Hour * random).to_f / Tardis::Year.to_f, random.hour.to_years
+    assert_equal (Tardis::Day * random).to_f / Tardis::Year.to_f, random.day.to_years
+    assert_equal (Tardis::Week * random).to_f / Tardis::Year.to_f, random.week.to_years
+    assert_equal (Tardis::Month * random).to_f / Tardis::Year.to_f, random.month.to_years
+    assert_equal (Tardis::Year * random).to_f / Tardis::Year.to_f, random.year.to_years
+    assert_equal (Tardis::Decade * random).to_f / Tardis::Year.to_f, random.decade.to_years
+    assert_equal (Tardis::Century * random).to_f / Tardis::Year.to_f, random.century.to_years
+  end
+
+  def test_multiple_units_to_decades
+    random = rand(10000)
+    assert_equal (Tardis::Second * random).to_f / Tardis::Decade.to_f, random.seconds.to_decades
+    assert_equal (Tardis::Minute * random).to_f / Tardis::Decade.to_f, random.minute.to_decades
+    assert_equal (Tardis::Hour * random).to_f / Tardis::Decade.to_f, random.hour.to_decades
+    assert_equal (Tardis::Day * random).to_f / Tardis::Decade.to_f, random.day.to_decades
+    assert_equal (Tardis::Week * random).to_f / Tardis::Decade.to_f, random.week.to_decades
+    assert_equal (Tardis::Month * random).to_f / Tardis::Decade.to_f, random.month.to_decades
+    assert_equal (Tardis::Year * random).to_f / Tardis::Decade.to_f, random.year.to_decades
+    assert_equal (Tardis::Decade * random).to_f / Tardis::Decade.to_f, random.decade.to_decades
+    assert_equal (Tardis::Century * random).to_f / Tardis::Decade.to_f, random.century.to_decades
+  end
+
+  def test_multiple_units_to_centuries
+    random = rand(10000)
+    assert_equal (Tardis::Second * random).to_f / Tardis::Century.to_f, random.seconds.to_centuries
+    assert_equal (Tardis::Minute * random).to_f / Tardis::Century.to_f, random.minute.to_centuries
+    assert_equal (Tardis::Hour * random).to_f / Tardis::Century.to_f, random.hour.to_centuries
+    assert_equal (Tardis::Day * random).to_f / Tardis::Century.to_f, random.day.to_centuries
+    assert_equal (Tardis::Week * random).to_f / Tardis::Century.to_f, random.week.to_centuries
+    assert_equal (Tardis::Month * random).to_f / Tardis::Century.to_f, random.month.to_centuries
+    assert_equal (Tardis::Year * random).to_f / Tardis::Century.to_f, random.year.to_centuries
+    assert_equal (Tardis::Decade * random).to_f / Tardis::Century.to_f, random.decade.to_centuries
+    assert_equal (Tardis::Century * random).to_f / Tardis::Century.to_f, random.century.to_centuries
   end
 end

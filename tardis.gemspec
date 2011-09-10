@@ -20,6 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.version        = Tardis::VERSION
 
+  spec.add_dependency 'rake'
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'bacon'
   spec.add_development_dependency 'rocco'

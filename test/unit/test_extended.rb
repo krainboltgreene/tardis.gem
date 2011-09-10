@@ -24,34 +24,34 @@ class TestTardisExtended < MiniTest::Unit::TestCase
   end
 
   def test_fortnight_count
-    assert @fortnight, Tardis::Fortnight
+    assert_equal @fortnight, Tardis::Fortnight
   end
 
   def test_quarter_count
-    assert @quarter, Tardis::Quarter
+    assert_equal @quarter, Tardis::Quarter
   end
 
   def test_olympiad_count
-    assert @olympiad, Tardis::Olympiad
+    assert_equal @olympiad, Tardis::Olympiad
   end
 
   def test_lustrum_count
-    assert @lustrum, Tardis::Lustrum
+    assert_equal @lustrum, Tardis::Lustrum
   end
 
   def test_indiction_count
-    assert @indiction, Tardis::Indiction
+    assert_equal @indiction, Tardis::Indiction
   end
 
   def test_jubilee_count
-    assert @jubilee, Tardis::Jubilee
+    assert_equal @jubilee, Tardis::Jubilee
   end
 
   def test_millennium_count
-    assert @millennium, Tardis::Millennium
+    assert_equal @millennium, Tardis::Millennium
   end
 
   def test_eon_count
-    assert @eon, Tardis::Eon
+    assert_equal @eon, Tardis::Eon
   end
 end

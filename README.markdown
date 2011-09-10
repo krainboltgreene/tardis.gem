@@ -1,7 +1,8 @@
 Tardis
 ======
 
-**Latest Version**: 0.2.0
+**Latest Version**: 0.3.0
+
 
 `tardis` is a gem for manipulating time and space, but mostly time.
 Much like it's namesake on the television series Doctor Who `tardis` provides you with a lot of tools for time.

@@ -1,6 +1,6 @@
 require_relative 'extended/math'
 
-module Tardis
+module Tardis::Time
   Fortnight  = Week    * 2
   Quarter    = Month   * 3
   Olympiad   = Year    * 4

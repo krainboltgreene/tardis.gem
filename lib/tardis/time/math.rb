@@ -1,82 +1,80 @@
-module Tardis
+module Tardis::Time
   module Math
-
     def second
-      self == 1 ? Tardis::Second : self * Tardis::Second
+      self == 1 ? Tardis::Time::Second : self * Tardis::Time::Second
     end
     alias_method :seconds, :second
 
     def minute
       if self == 1
-        Tardis::Minute
+        Tardis::Time::Minute
       else
-        self * Tardis::Minute
+        self * Tardis::Time::Minute
       end
     end
     alias_method :minutes, :minute
 
     def hour
       if self == 1
-        Tardis::Hour
+        Tardis::Time::Hour
       else
-        self * Tardis::Hour
+        self * Tardis::Time::Hour
       end
     end
     alias_method :hours, :hour
 
     def day
       if self == 1
-        Tardis::Day
+        Tardis::Time::Day
       else
-        self * Tardis::Day
+        self * Tardis::Time::Day
       end
     end
     alias_method :days, :day
 
     def week
       if self == 1
-        Tardis::Week
+        Tardis::Time::Week
       else
-        self * Tardis::Week
+        self * Tardis::Time::Week
       end
     end
     alias_method :weeks, :week
 
     def month
       if self == 1
-        Tardis::Month
+        Tardis::Time::Month
       else
-        self * Tardis::Month
+        self * Tardis::Time::Month
       end
     end
     alias_method :months, :month
 
     def year
       if self == 1
-        Tardis::Year
+        Tardis::Time::Year
       else
-        self * Tardis::Year
+        self * Tardis::Time::Year
       end
     end
     alias_method :years, :year
 
     def decade
       if self == 1
-        Tardis::Decade
+        Tardis::Time::Decade
       else
-        self * Tardis::Decade
+        self * Tardis::Time::Decade
       end
     end
     alias_method :decades, :decade
 
     def century
       if self == 1
-        Tardis::Century
+        Tardis::Time::Century
       else
-        self * Tardis::Century
+        self * Tardis::Time::Century
       end
     end
     alias_method :centuries, :century
-
   end
 end

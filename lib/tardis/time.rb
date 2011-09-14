@@ -19,6 +19,7 @@ end
 class Integer
   include Tardis::Time::Conversion
   include Tardis::Time::Math
+  include Tardis::Time::Travel
 end
 
 class Time

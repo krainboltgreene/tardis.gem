@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require 'tardis'
-require 'tardis/extended'
+require 'tardis/time/extended'
 
-class TestTardisExtended < MiniTest::Unit::TestCase
+class TestTardisTimeExtended < MiniTest::Unit::TestCase
   def setup
     @second     = 1
     @minute     = @second  * 60
@@ -24,34 +24,34 @@ class TestTardisExtended < MiniTest::Unit::TestCase
   end
 
   def test_fortnight_count
-    assert_equal @fortnight, Tardis::Fortnight
+    assert_equal @fortnight, Tardis::Time::Fortnight
   end
 
   def test_quarter_count
-    assert_equal @quarter, Tardis::Quarter
+    assert_equal @quarter, Tardis::Time::Quarter
   end
 
   def test_olympiad_count
-    assert_equal @olympiad, Tardis::Olympiad
+    assert_equal @olympiad, Tardis::Time::Olympiad
   end
 
   def test_lustrum_count
-    assert_equal @lustrum, Tardis::Lustrum
+    assert_equal @lustrum, Tardis::Time::Lustrum
   end
 
   def test_indiction_count
-    assert_equal @indiction, Tardis::Indiction
+    assert_equal @indiction, Tardis::Time::Indiction
   end
 
   def test_jubilee_count
-    assert_equal @jubilee, Tardis::Jubilee
+    assert_equal @jubilee, Tardis::Time::Jubilee
   end
 
   def test_millennium_count
-    assert_equal @millennium, Tardis::Millennium
+    assert_equal @millennium, Tardis::Time::Millennium
   end
 
   def test_eon_count
-    assert_equal @eon, Tardis::Eon
+    assert_equal @eon, Tardis::Time::Eon
   end
 end

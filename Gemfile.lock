@@ -1,0 +1,25 @@
+PATH
+  remote: .
+  specs:
+    tardis (0.3.0)
+      rake
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    kramdown (0.13.3)
+    minitest (2.6.0)
+    rake (0.9.2)
+    require_relative (1.0.2)
+    yard (0.7.2)
+
+PLATFORMS
+  java
+  ruby
+
+DEPENDENCIES
+  kramdown
+  minitest
+  require_relative
+  tardis!
+  yard

@@ -26,8 +26,14 @@ end
 # In this case I have decided that since the patched methods and classes
 # are pretty unique there won't be any problems.
 class Integer
-  include Tardis::Time::Conversion
+
+  # Including all of the math methods, like 5.centuries
   include Tardis::Time::Math
+
+  # Including in all of the conversion methods, like 5.hours.to_minutes
+  include Tardis::Time::Conversion
+
+  # Including all of the Travel methods
   include Tardis::Time::Travel
 end
 

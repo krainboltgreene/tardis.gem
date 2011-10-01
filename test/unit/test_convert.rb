@@ -1,7 +1,9 @@
 require 'minitest/autorun'
+require 'minitest/pride'
 require 'tardis'
 
 class TestTardisTimeConvert < MiniTest::Unit::TestCase
+
   def test_single_unit_to_seconds
     assert_equal Tardis::Time::Second, 1.second.to_seconds
     assert_equal Tardis::Time::Minute, 1.minute.to_seconds
@@ -238,4 +240,6 @@ class TestTardisTimeConvert < MiniTest::Unit::TestCase
     assert_equal (Tardis::Time::Decade * random).to_f / Tardis::Time::Century.to_f, random.decade.to_centuries
     assert_equal (Tardis::Time::Century * random).to_f / Tardis::Time::Century.to_f, random.century.to_centuries
   end
+
+
 end

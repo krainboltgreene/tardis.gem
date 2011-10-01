@@ -1,5 +1,5 @@
 # encoding: utf-8
-$:.push File.expand_path('../lib', __FILE__)
+$:.push File.expand_pathr '../lib', __FILE__
 require 'tardis/version'
 
 
@@ -20,10 +20,9 @@ Gem::Specification.new do |spec|
 
   spec.version        = Tardis::VERSION
 
-  spec.add_dependency 'rake'
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'yard'
   spec.add_development_dependency 'kramdown'
-  spec.add_development_dependency 'require_relative' if RUBY_VERSION =~ /1\.8/
-
+  spec.add_dependency 'require_relative' if RUBY_VERSION =~ /1\.8/
+  spec.add_dependency 'rake'
 end

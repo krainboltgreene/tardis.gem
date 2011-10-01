@@ -1,10 +1,24 @@
 module Tardis::Time
   module Travel
+
+    # The .from() method is called on a Time or Date object.
+    # It takes one argument, the a time object or Integer representing seconds.
+    # The returned object is an Integer which represents a number of seconds
+    # between that point in time and now.
     def from(timestamp)
-      self.to_i - timestamp.to_i
+      # Transforming the time/date object (self) to an integer.
+      beginning = self.to_i
+
+      # Transforming the time/date object given to an integer.
+      ending = timestamp.to_i
+
+      # Subtract the end period from the start period which will
+      # return the total amount of time in seconds from the
+      # start the end.
+      beginning - ending
     end
 
-    # The .to() method is caled on a Time or Date object.
+    # The .to() method is called on a Time or Date object.
     # It takes one argument, the a time object or Integer representing seconds.
     # The returned object is an Integer which represents a number of seconds
     # between that point in time and now

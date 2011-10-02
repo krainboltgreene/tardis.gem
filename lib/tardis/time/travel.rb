@@ -1,9 +1,14 @@
-module Tardis::Time::Travel
-  # The .from() method is called on a Time or Date object.
-  # It takes one argument, the a time object or Integer representing seconds.
-  # The returned object is an Integer which represents a number of seconds
-  # between that point in time and now.
+# Tardis::Time::Travel is a module for moving between points of Time.
+# Specifically it gives helper methods for determining things like,
+# the amount of seconds between two points of time, a date in the
+# future or past by a certain amount of time, and more.
+#
+# Here's a list of cool things you can do with Time::Travel:
+#
+# * 5.days.ago
+# * 2.days.ago.from_now
 
+module Tardis::Time::Travel
 
   # example: time_left = next_birthday.from Date.yesterday
   # anatomy: [Time|Date].from([Time|Date]) => Integer
@@ -28,7 +33,7 @@ module Tardis::Time::Travel
   end
 
   # example: @account.created_at.to Date.today
-  # anatomy: [Time|Date].from([Time|Date]) => Integer
+  # anatomy: [Time|Date].to([Time|Date]) => Integer
   # description: |
   #   Called on a Time or Date object and given a Time or Date object.
   #   Returns an Integer, representing a number of seconds between the
@@ -49,19 +54,47 @@ module Tardis::Time::Travel
     beginning - ending
   end
 
+  # example: time_left = next_birthday.from_now
+  # anatomy: [Time|Date].from_now => Integer
+  # description: |
+  #   Called on a Time or Date object and returns an Integer,
+  #   representing a number of seconds between the object
+  #   called on (a time in the future) and now in time.
   def from_now
+    # Call the .from() method with self as the starting point and
+    # Time.new as the end
     self.from Time.new
   end
 
+  # example: @account.created_at.to_now
+  # anatomy: [Time|Date].to_now => Integer
+  # description: |
+  #   Called on a Time or Date object and returns an Integer,
+  #   representing a number of seconds between the object
+  #   called on (a time in the past) and now in time.
   def to_now
+    # Call the .to() method with self as the starting point and
+    # Time.new as the end
     self.to Time.new
   end
 
+  # example: 5.days.ago
+  # anatomy: [Integer].ago => Time
+  # description: |
+  #   Called on an Integer object and returns an Time object, which
+  #   represents the point in time before the given amount of seconds.
   def ago
+    # Subtract the Integer from Time.new
     Time.new - self
   end
 
+  # example: 5.days.later
+  # anatomy: [Integer].later => Time
+  # description: |
+  #   Called on an Integer object and returns an Time object, which
+  #   represents the point in time after the given amount of seconds.
   def later
+    # Add the Integer to Time.new
     Time.new + self
   end
 end

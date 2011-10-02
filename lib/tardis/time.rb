@@ -37,6 +37,10 @@ class Integer
   include Tardis::Time::Travel
 end
 
+# Similar to the above comment about "monkey patching" on Integer
+# I've included Tardis into Time as well.
 class Time
+
+  # Including all the point of time traveling, like 5.days.later
   include Tardis::Time::Travel
 end

@@ -1,14 +1,13 @@
 Tardis
 ======
 
-**Latest Version**: 0.3.0
-
+**Stable Version**: 1.0.0
 
 `tardis` is a gem for manipulating time and space, but mostly time.
 Much like it's namesake on the television series Doctor Who `tardis` provides you with a lot of tools for time.
 It's core features are:
 
-* Convienient Time Unit helpers, both for Time Unit math and converting.
+* Convenient Time Unit helpers, both for Time Unit math and converting.
 * Handles both regular Time Units and SI Metric Seconds.
 * Time specific helpers for traversing time periods.
 * Turning time and Time Units into words for reading.
@@ -91,17 +90,6 @@ Remember that we really want to know if something is wrong, so use the Issue Lis
 
 Changelog
 ---------
-
-**v0.2.0**
-
-* Adding math related work and tests
-* Adding time unit convertion and tests
-
-**v0.1.0**
-
-* Adding Time Units
-* Adding minitest framework
-* Initiating the project
 
 
 Contributing

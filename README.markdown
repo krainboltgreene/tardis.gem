@@ -35,7 +35,7 @@ Time.yesterday.to 4.days.from_now
 Time.tomorrow.from_now.in_words
 # => "1 day from now"
 
-Time.last_christmas.to Time.tomorrow
+5.days.ago.from_now
 # => 2445600.001
 ```
 

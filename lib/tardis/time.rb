@@ -1,7 +1,3 @@
-require_relative 'time/math'
-require_relative 'time/travel'
-require_relative 'time/conversion'
-
 # Tardis::Time is the module where all time based methods, classes, and modules
 # are defined. Anything that has to do with the second unit of measurement goes
 # into Tardis::Time.
@@ -17,6 +13,10 @@ module Tardis::Time
     Decade  = Year    * 10
     Century = Decade  * 10
 end
+
+require_relative 'time/math'
+require_relative 'time/travel'
+require_relative 'time/conversion'
 
 # To allow for syntax like 5.seconds I need to include the Time modules
 # into Integer. This is commonly considered "monkey patching" and to some a

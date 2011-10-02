@@ -1,3 +1,12 @@
+# Tardis::Time::Math is a module that contains all of the mathematics of time.
+# This includes turning Integers representing a number of units into the
+# base unit of seconds as well as metric notation.
+#
+# Here's a list of cool things you can do with Time::Math:
+#
+# * 5.days
+# * 14.kiloseconds
+
 module Tardis::Time::Math
 
   # List all of the time units

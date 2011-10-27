@@ -112,18 +112,6 @@ class TestTardisTimeConvert < MiniTest::Unit::TestCase
     assert_equal Tardis::Time::Century.to_f / Tardis::Time::Century.to_f, 1.century.to_centuries
   end
 
-  def test_single_unit_to_weeks
-    assert_equal Tardis::Time::Second.to_f / Tardis::Time::Week.to_f, 1.second.to_weeks
-    assert_equal Tardis::Time::Minute.to_f / Tardis::Time::Week.to_f, 1.minute.to_weeks
-    assert_equal Tardis::Time::Hour.to_f / Tardis::Time::Week.to_f, 1.hour.to_weeks
-    assert_equal Tardis::Time::Day.to_f / Tardis::Time::Week.to_f, 1.day.to_weeks
-    assert_equal Tardis::Time::Week.to_f / Tardis::Time::Week.to_f, 1.week.to_weeks
-    assert_equal Tardis::Time::Month.to_f / Tardis::Time::Week.to_f, 1.month.to_weeks
-    assert_equal Tardis::Time::Year.to_f / Tardis::Time::Week.to_f, 1.year.to_weeks
-    assert_equal Tardis::Time::Decade.to_f / Tardis::Time::Week.to_f, 1.decade.to_weeks
-    assert_equal Tardis::Time::Century.to_f / Tardis::Time::Week.to_f, 1.century.to_weeks
-  end
-
   def test_multiple_units_to_seconds
     random = rand(10000)
     assert_equal Tardis::Time::Second * random, random.seconds.to_seconds

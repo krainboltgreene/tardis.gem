@@ -1,5 +1,7 @@
 require 'minitest/autorun'
+require 'minitest/pride'
 require 'tardis'
+
 
 class TestTardisTime < MiniTest::Unit::TestCase
   def setup

@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'minitest/pride'
 require 'tardis'
 
 class TestTardisTimeTravel < MiniTest::Unit::TestCase

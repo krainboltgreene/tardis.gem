@@ -1,7 +1,10 @@
 require 'minitest/autorun'
+require 'minitest/pride'
 require 'tardis'
 
+
 class TestTardisTimeMath < MiniTest::Unit::TestCase
+
   def test_one_second
     assert_equal Tardis::Time::Second, 1.second
   end

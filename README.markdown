@@ -51,7 +51,7 @@ Installing
 
 Installing `tardis` is as easy as using the `gem install` command:
 
-``` terminal
+```
 $ gem install tardis
 ```
 

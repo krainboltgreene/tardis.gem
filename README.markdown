@@ -51,7 +51,7 @@ Installing
 
 Installing `tardis` is as easy as using the `gem install` command:
 
-```
+``` bash
 $ gem install tardis
 ```
 
@@ -63,7 +63,7 @@ gem 'tardis'
 
 And then using:
 
-``` terminal
+``` bash
 $ bundle install
 ```
 
@@ -72,7 +72,7 @@ $ bundle install
 
 To make sure you did everything right, just do the following:
 
-```
+``` bash
 $ ruby -e 'p require "tardis"'
 > true
 ```

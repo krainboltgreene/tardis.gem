@@ -1,49 +1,23 @@
-.DS_Store
-._*
-.rspec
-.yardoc
-.bundle
-.config
-.Spotlight-V100
-.Trashes
+# Git Ignore
+# ==========
+# The .gitignore file is used to make the version control ignore certain
+# directories or files.
 
-_yardoc
-Icon?
-rerun.txt
-config/initializers/secret_token.rb
-Gemfile.lock
+# General crud
+/tmp
 
-*~
-.*.swp
-*.gem
+# Bundler crud
+/pkg
+/.bundle
+/Gemfile.lock
+/*.gem
+
+# Documentation crud
+/.yardoc
+/_yardoc
+/doc
+/rdoc
+/coverage
+
+# Interpretor Crud
 *.rbc
-*.sassc
-*.vim
-*.sublime*
-**.orig
-capybara-*.html
-pickle-email-*.html
-
-
-db/*.sqlite3
-config/*.yml
-
-.sass-cache/
-.svn/
-.git/
-.idea/
-.rbx/
-tmp/
-log/
-coverage/
-doc/
-pkg/
-rdoc/
-bin/
-vendor/bundle/
-public/system/
-spec/tmp/
-test/tmp/
-test/version_tmp/
-spec/reports/
-lib/bundler/man/

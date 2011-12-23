@@ -1,11 +1,10 @@
 Tardis
 ======
 
-**Stable Version**: STILL IN DEVELOPMENT
-
 `tardis` is a gem for manipulating time and space, but mostly time.
 Much like it's namesake on the television series Doctor Who `tardis` provides you with a lot of tools for time.
 It's core features are:
+
 
 * Convenient Time Unit helpers, both for Time Unit math and converting.
 * Handles both regular Time Units and SI Metric Seconds.

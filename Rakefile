@@ -1,11 +1,9 @@
-require 'bundler'
-require 'yard'
-require 'rake/testtask'
+#!/usr/bin/env ruby
 require 'bundler/gem_tasks'
-require_relative 'test/helper'
+require 'rake/clean'
+require 'rake/testtask'
+require 'yard'
 
-# Make sure the Bundler gem is installed by trying to use the setup method.
-Bundler::GemHelper.install_tasks
 begin
   Bundler.setup :default, :development
 rescue Bundler::BundlerError => error
@@ -14,17 +12,20 @@ rescue Bundler::BundlerError => error
   exit error.status_code
 end
 
-desc "Setup `rake test` to run all of the tests in the test directory."
-Rake::TestTask.new :test do |config|
-  config.libs << "test"
-  config.pattern = 'test/**/test_*.rb'
+Bundler::GemHelper.install_tasks
+
+desc "Run all of the tests"
+Rake::TestTask.new do |config|
+  config.libs << 'test'
+  config.pattern = 'test/**/test_*'
   config.verbose = true
   config.warning = true
 end
 
-desc "Setup YARD's documentation task with the files in lib."
-YARD::Rake::YardocTask.new :doc do |config|
+desc "Generate all of the docs"
+YARD::Rake::YardocTask.new do |config|
   config.files = Dir['lib/**/*.rb']
 end
 
-task :default => :test
+desc 'Default: run tests, and generate docs'
+task :default => [ :test, :yard ]

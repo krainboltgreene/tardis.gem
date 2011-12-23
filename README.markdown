@@ -1,7 +1,7 @@
 Tardis
 ======
 
-`tardis` is a gem for manipulating time and space, but mostly time.
+Tardis is a library for manipulating Time and Space, but mostly time.
 Much like it's namesake on the television series Doctor Who `tardis` provides you with a lot of tools for time.
 It's core features are:
 

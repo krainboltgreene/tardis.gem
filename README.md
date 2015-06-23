@@ -1,21 +1,70 @@
-blankgem
+tardis
 --------
 
-  - [![Version](https://badge.fury.io/rb/blankgem.png)](https://rubygems.org/gems/blankgem)
-  - [![Climate](https://codeclimate.com/github/krainboltgreene/blankgem.png)](https://codeclimate.com/github/krainboltgreene/blankgem)
-  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/blankgem.png)](https://travis-ci.org/krainboltgreene/blankgem)
-  - [![Dependencies](https://gemnasium.com/krainboltgreene/blankgem.png)](https://gemnasium.com/krainboltgreene/blankgem)
-  - [![Coverage](http://img.shields.io/coveralls/krainboltgreene/blankgem.png)](https://coveralls.io/r/krainboltgreene/blankgem)
+  - [![Version](https://badge.fury.io/rb/tardis.png)](https://rubygems.org/gems/tardis)
+  - [![Climate](https://codeclimate.com/github/krainboltgreene/tardis.png)](https://codeclimate.com/github/krainboltgreene/tardis)
+  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/tardis.png)](https://travis-ci.org/krainboltgreene/tardis)
+  - [![Dependencies](https://gemnasium.com/krainboltgreene/tardis.png)](https://gemnasium.com/krainboltgreene/tardis)
+  - [![Coverage](http://img.shields.io/coveralls/krainboltgreene/tardis.png)](https://coveralls.io/r/krainboltgreene/tardis)
   - [![Gittip](http://img.shields.io/gittip/krainboltgreene.png)](https://www.gittip.com/krainboltgreene/)
   - [![License](http://img.shields.io/license/MIT.png?color=green)](http://opensource.org/licenses/MIT)
 
-TODO: Write a gem description
+`tardis` is a gem that gives you a more english-like expression for time and space math. Despite the handy DSL `tardis` also gives you single purpose objects for handling the more complex parts of Time & Space.
 
 
 Using
 =====
 
-TODO: Write usage instructions here
+You can use the `tardis` DSL to do some things you'd normally do with `active_support` and more, like:
+
+``` ruby
+1.week
+20.days.ago
+20.days.later
+```
+
+And some extra ones that `active_support` doesn't cover:
+
+``` ruby
+1.week.from(Time.now)
+10.years.to(Date.tomorrow)
+100000.seconds.to_days
+```
+
+In `tardis` you aslo have nice Period objects:
+
+``` ruby
+1.hour.ago.class #=> <Tardis::Period @beginning=2013-03-03 23:44:59 -0800, @ending=2013-03-04 00:44:59 -0800>
+```
+
+Periods, if forced into strings or integers, represent the number of seconds between the two points
+
+``` ruby
+1.hour.ago.to_i #=> -3600
+```
+
+Obviously Periods act a lot like a Range and can be coerced into one:
+
+``` ruby
+1.hour.ago.to_range #=> 1362383339..1362386939
+```
+
+You may have noticed the negative integer from `Period#to_i`.
+This represents the period beginning before the ending.
+The reverse comes from using `Period#from_now`:
+
+``` ruby
+1.hour.from_now.to_i #=> 3600
+```
+
+Periods also have a special `Period#to_words` method:
+
+``` ruby
+1.hour.ago.to_words #=> "1 hour ago"
+200.minutes.ago.to_words #=> "3 hour ago"
+```
+
+Time is fun.
 
 
 Installing
@@ -23,7 +72,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "blankgem"
+    gem "tardis", "~> 1.0"
 
 And then execute:
 
@@ -31,7 +80,7 @@ And then execute:
 
 Or install it yourself with:
 
-    $ gem install blankgem
+    $ gem install tardis
 
 
 Contributing
@@ -42,6 +91,14 @@ Contributing
   3. Commit your changes (`git commit -am 'Add some feature'`)
   4. Push to the branch (`git push origin my-new-feature`)
   5. Create new Pull Request
+
+
+Credits
+=======
+
+  * [Simon Hørup Eskildsen](https://github.com/Sirupsen)
+  * [Henrik Enggaard](mailto: https://github.com/henrikh)
+  * [James Larkby-Lahet](https://github.com/wolfwood)
 
 
 Licensing

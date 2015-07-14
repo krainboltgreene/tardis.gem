@@ -2,16 +2,16 @@
 
 lib = File.expand_path(File.join("..", "lib"), __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "blankgem/version"
+require "tardis/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "blankgem"
-  spec.version = Blankgem::VERSION
+  spec.name = "tardis"
+  spec.version = Tardis::VERSION
   spec.authors = ["Kurtis Rainbolt-Greene"]
   spec.email = ["me@kurtisrainboltgreene.name"]
-  spec.summary = %q{TODO: Write a gem summary}
+  spec.summary = %q{A library for managing units of time and traversal of time.}
   spec.description = spec.summary
-  spec.homepage = "http://krainboltgreene.github.io/blankgem"
+  spec.homepage = "http://krainboltgreene.github.io/tardis.gem"
   spec.license = "MIT"
 
   spec.files = Dir[File.join("lib", "**", "*")]

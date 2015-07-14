@@ -1,25 +1,59 @@
-blankgem
---------
+tardis
+------
 
-  - [![Quality](http://img.shields.io/codeclimate/github/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/blankgem.gem)
-  - [![Coverage](http://img.shields.io/codeclimate/coverage/github/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/blankgem.gem)
-  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://travis-ci.org/krainboltgreene/blankgem.gem)
-  - [![Dependencies](http://img.shields.io/gemnasium/krainboltgreene/blankgem.gem.svg?style=flat-square)](https://gemnasium.com/krainboltgreene/blankgem.gem)
-  - [![Downloads](http://img.shields.io/gem/dtv/blankgem.svg?style=flat-square)](https://rubygems.org/gems/blankgem)
-  - [![Tags](http://img.shields.io/github/tag/krainboltgreene/blankgem.gem.svg?style=flat-square)](http://github.com/krainboltgreene/blankgem.gem/tags)
-  - [![Releases](http://img.shields.io/github/release/krainboltgreene/blankgem.gem.svg?style=flat-square)](http://github.com/krainboltgreene/blankgem.gem/releases)
-  - [![Issues](http://img.shields.io/github/issues/krainboltgreene/blankgem.gem.svg?style=flat-square)](http://github.com/krainboltgreene/blankgem.gem/issues)
+  - [![Quality](http://img.shields.io/codeclimate/github/krainboltgreene/tardis.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/tardis.gem)
+  - [![Coverage](http://img.shields.io/codeclimate/coverage/github/krainboltgreene/tardis.gem.svg?style=flat-square)](https://codeclimate.com/github/krainboltgreene/tardis.gem)
+  - [![Build](http://img.shields.io/travis-ci/krainboltgreene/tardis.gem.svg?style=flat-square)](https://travis-ci.org/krainboltgreene/tardis.gem)
+  - [![Dependencies](http://img.shields.io/gemnasium/krainboltgreene/tardis.gem.svg?style=flat-square)](https://gemnasium.com/krainboltgreene/tardis.gem)
+  - [![Downloads](http://img.shields.io/gem/dtv/tardis.svg?style=flat-square)](https://rubygems.org/gems/tardis)
+  - [![Tags](http://img.shields.io/github/tag/krainboltgreene/tardis.gem.svg?style=flat-square)](http://github.com/krainboltgreene/tardis.gem/tags)
+  - [![Releases](http://img.shields.io/github/release/krainboltgreene/tardis.gem.svg?style=flat-square)](http://github.com/krainboltgreene/tardis.gem/releases)
+  - [![Issues](http://img.shields.io/github/issues/krainboltgreene/tardis.gem.svg?style=flat-square)](http://github.com/krainboltgreene/tardis.gem/issues)
   - [![License](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-  - [![Version](http://img.shields.io/gem/v/blankgem.svg?style=flat-square)](https://rubygems.org/gems/blankgem)
+  - [![Version](http://img.shields.io/gem/v/tardis.svg?style=flat-square)](https://rubygems.org/gems/tardis)
 
 
-TODO: Write a gem description
+A library for managing units of time and traversal of time.
 
 
 Using
 =====
 
-TODO: Write usage instructions here
+*This library automatically patches Numeric, Time, & Date*
+
+To use the units:
+
+``` ruby
+Time::HOUR
+Date::WEEK
+```
+
+To generate distances in times:
+
+```
+Date.tomorrow.from(Date.today)
+Time.now.to(Date.tomorrow)
+```
+
+To use the shorthand for generating seconds of a specific unit:
+
+``` ruby
+5.hours
+10.weeks
+```
+
+To use the shorthand for generating the specific units with seconds:
+
+``` ruby
+3600.to_minutes
+```
+
+And now in conjunction:
+
+``` ruby
+5.hours.ago.to_now
+10.weeks.from_now.to_minutes
+```
 
 
 Installing
@@ -27,7 +61,7 @@ Installing
 
 Add this line to your application's Gemfile:
 
-    gem "blankgem", "~> 1.0"
+    gem "tardis", "1.0.0"
 
 And then execute:
 
@@ -35,7 +69,7 @@ And then execute:
 
 Or install it yourself with:
 
-    $ gem install blankgem
+    $ gem install tardis
 
 
 Contributing

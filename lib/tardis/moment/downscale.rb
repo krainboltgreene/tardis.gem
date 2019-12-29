@@ -26,6 +26,16 @@ module Tardis
       end
       alias_method :in_weeks, :to_weeks
 
+      def to_months
+        downscale_to(Tardis::Moment::MONTH)
+      end
+      alias_method :in_months, :to_months
+
+      def to_years
+        downscale_to(Tardis::Moment::YEAR)
+      end
+      alias_method :in_years, :to_years
+
       def downscale_to(unit)
         self.to_f / unit.to_f
       end

@@ -46,4 +46,20 @@ RSpec.describe Tardis::Moment do
       expect(week).to eq(604_800)
     end
   end
+
+  describe Tardis::Moment::MONTH do
+    let(:week) { described_class.const_get("MONTH") }
+
+    it "is the correct value in seconds" do
+      expect(week).to eq(2_629_746)
+    end
+  end
+
+  describe Tardis::Moment::YEAR do
+    let(:week) { described_class.const_get("YEAR") }
+
+    it "is the correct value in seconds" do
+      expect(week).to eq(31_556_952)
+    end
+  end
 end

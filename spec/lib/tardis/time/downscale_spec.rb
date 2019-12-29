@@ -64,4 +64,28 @@ RSpec.describe Tardis::Moment::Downscale do
       expect(1_209_600.in_weeks).to eq(2)
     end
   end
+
+  describe "#month" do
+    it "returns number of months" do
+      expect(2_629_746.to_months).to eq(1)
+    end
+  end
+
+  describe "#months" do
+    it "returns number of months" do
+      expect(5_259_492.in_months).to eq(2)
+    end
+  end
+
+  describe "#year" do
+    it "returns number of years" do
+      expect(31_556_952.to_years).to eq(1)
+    end
+  end
+
+  describe "#years" do
+    it "returns number of years" do
+      expect(63_113_904.in_years).to eq(2)
+    end
+  end
 end

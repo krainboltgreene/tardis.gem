@@ -9,6 +9,9 @@ module Tardis
     HOUR = MINUTE * 60
     DAY = HOUR * 24
     WEEK = DAY * 7
+    # https://en.wikipedia.org/wiki/Gregorian_calendar
+    YEAR = DAY * 365.2425
+    MONTH = YEAR / 12
 
     require_relative "moment/upscale"
     require_relative "moment/downscale"

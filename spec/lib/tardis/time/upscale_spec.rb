@@ -64,4 +64,28 @@ RSpec.describe Tardis::Moment::Upscale do
       expect(2.weeks).to eq(1_209_600)
     end
   end
+
+  describe "#month" do
+    it "returns seconds, based on the number given in months" do
+      expect(1.month).to eq(2_629_746)
+    end
+  end
+
+  describe "#months" do
+    it "returns seconds, based on the number given in months" do
+      expect(2.months).to eq(5_259_492)
+    end
+  end
+
+  describe "#year" do
+    it "returns seconds, based on the number given in years" do
+      expect(1.year).to eq(31_556_952)
+    end
+  end
+
+  describe "#years" do
+    it "returns seconds, based on the number given in years" do
+      expect(2.years).to eq(63_113_904)
+    end
+  end
 end

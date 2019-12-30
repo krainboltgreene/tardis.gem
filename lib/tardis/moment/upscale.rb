@@ -26,6 +26,16 @@ module Tardis
       end
       alias_method :weeks, :week
 
+      def month
+        upscale_to(Tardis::Moment::MONTH)
+      end
+      alias_method :months, :month
+
+      def year
+        upscale_to(Tardis::Moment::YEAR)
+      end
+      alias_method :years, :year
+
       def upscale_to(unit)
         self * unit
       end
